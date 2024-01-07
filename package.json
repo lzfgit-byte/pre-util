@@ -1,5 +1,5 @@
 {
-  "name": "@Ttro/utils",
+  "name": "@ilzf/utils",
   "version": "0.0.1",
   "files": ["dist"],
   "type": "module",
