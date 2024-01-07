@@ -1,14 +1,25 @@
 {
-  "name": "vite-ts-vue3-quick-build-lib",
+  "name": "@Ttro/utils",
   "version": "0.0.1",
   "files": ["dist"],
   "type": "module",
   "main": "dist/lib.js",
+  "publishConfig": {
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
     "build:lib": "vite build && npm pack",
     "lib": "npm pack"
+  },
+  "keywords": [
+
+  ],
+  "homepage": "https://github.com/lzfgit-byte/pre-util",
+  "bugs": "https://github.com/lzfgit-byte/pre-util/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lzfgit-byte/pre-util"
   },
   "dependencies": {
   },
