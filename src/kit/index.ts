@@ -11,3 +11,5 @@ export const waitTime = (delay = 200) => {
     }, delay);
   });
 };
+
+export const generateKey = (code?: string) => new Date().getTime() + code;
