@@ -2,6 +2,7 @@
   "name": "@ilzf/utils",
   "version": "0.0.3",
   "files": ["dist"],
+  "author": "abclzf",
   "type": "module",
   "main": "dist/lib.js",
   "publishConfig": {
