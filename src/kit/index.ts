@@ -40,3 +40,56 @@ export const hashString = (str: string) => {
 export const isFalsity = (value: any) => {
   return value === undefined || value === null || value === '';
 };
+/**
+ * 获取进度信息
+ */
+export const calcProcess = (cur: any, total: any) => {
+  return +((cur / total) * 100).toFixed(0);
+};
+/**
+ * JSON序列化，支持函数和 undefined
+ * @param data
+ * @constructor
+ */
+export const JSONStringify = <T>(data: T) => {
+  return JSON.stringify(
+    data,
+    (key, val) => {
+      // 处理函数丢失问题
+      if (typeof val === 'function') {
+        return `${val}`;
+      }
+      // 处理 undefined 丢失问题
+      if (typeof val === 'undefined') {
+        return null;
+      }
+      return val;
+    },
+    2
+  );
+};
+
+export const evalFn = (fn: string) => {
+  let Fun = Function; // 一个变量指向Function，防止前端编译工具报错
+  return new Fun(`return ${fn}`)();
+};
+
+/**
+ * JSON反序列化，支持函数和 undefined
+ * @param fn
+ */
+export const JSONParse = (data: string) => {
+  return JSON.parse(data, (k, v) => {
+    // 还原函数值
+    if (typeof v === 'string' && v.indexOf && (v.includes('function') || v.includes('=>'))) {
+      return evalFn(`(function(){return ${v}})()`);
+    } else if (typeof v === 'string' && v.indexOf && v.includes('return ')) {
+      const baseLeftIndex = v.indexOf('(');
+      if (baseLeftIndex > -1) {
+        const newFn = `function ${v.substring(baseLeftIndex)}`;
+        return evalFn(`(function(){return ${newFn}})()`);
+      }
+    }
+    return v;
+  });
+};
