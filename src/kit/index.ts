@@ -34,3 +34,9 @@ export const generateKey = (code?: string) => new Date().getTime() + code;
 export const hashString = (str: string) => {
   return Md5.hashStr(str);
 };
+/**
+ * 判断是否是个假值
+ */
+export const isFalsity = (value: any) => {
+  return value === undefined || value === null || value === '';
+};

@@ -12,9 +12,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/main.ts'),
-      name: 'lib',
-      formats: ['es', 'umd'],
-      fileName: 'lib',
+      name: 'index',
+      formats: ['cjs', 'es'],
+      fileName: 'index',
     },
     rollupOptions: {
       external: ['vue'],
