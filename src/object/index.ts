@@ -28,7 +28,7 @@ export const isRegExp = (val: any) => toTypeString(val) === '[object RegExp]';
  * 是否是方法
  * @param val
  */
-const isFunction = (val: any) => typeof val === 'function';
+export const isFunction = (val: any) => typeof val === 'function';
 /**
  * 是否是字符串
  * @param val

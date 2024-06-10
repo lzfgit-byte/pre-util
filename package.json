@@ -1,6 +1,6 @@
 {
   "name": "@ilzf/utils",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "files": ["dist"],
   "exports": {
     ".": {
@@ -15,7 +15,7 @@
   "publishConfig": {
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build & npm version patch"
   },
   "keywords": [
   ],
