@@ -1,7 +1,9 @@
 {
   "name": "@ilzf/utils",
-  "version": "0.0.12",
-  "files": ["dist"],
+  "version": "0.0.13",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -12,13 +14,11 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "publishConfig": {
-  },
+  "publishConfig": {},
   "scripts": {
     "build": "vite build & npm version patch"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "homepage": "https://github.com/lzfgit-byte/pre-util",
   "bugs": "https://github.com/lzfgit-byte/pre-util/issues",
   "repository": {
