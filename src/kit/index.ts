@@ -44,7 +44,7 @@ export const isFalsity = (value: any) => {
  * 获取进度信息
  */
 export const calcProcess = (cur: any, total: any) => {
-  return +((cur / total) * 100).toFixed(0);
+  return +((cur / total) * 100).toFixed(0) || 0;
 };
 /**
  * JSON序列化，支持函数和 undefined
