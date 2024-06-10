@@ -93,3 +93,62 @@ export const JSONParse = (data: string) => {
     return v;
   });
 };
+export class URLHelper {
+  private url: URL;
+  constructor(url_: string) {
+    this.url = new URL(url_);
+  }
+
+  getQuery(key: string) {
+    return this.url.searchParams.get(key);
+  }
+
+  setQuery(key: string, value: string) {
+    this.url.searchParams.set(key, value);
+  }
+
+  // 删除查询
+  deleteQuery(key: string) {
+    this.url.searchParams.delete(key);
+  }
+
+  getURLString() {
+    return this.url.toString();
+  }
+
+  getPath() {
+    return this.url.pathname;
+  }
+
+  setPath(path: string) {
+    this.url.pathname = path;
+  }
+
+  getHost() {
+    return this.url.host;
+  }
+
+  getHostname() {
+    return this.url.hostname;
+  }
+
+  getProtocol() {
+    return this.url.protocol;
+  }
+
+  getPort() {
+    return this.url.port;
+  }
+
+  getOrigin() {
+    return this.url.origin;
+  }
+
+  getHash() {
+    return this.url.hash;
+  }
+
+  setHash(hash: string) {
+    this.url.hash = hash;
+  }
+}
