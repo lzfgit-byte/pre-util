@@ -153,15 +153,11 @@ export class URLHelper {
   }
 }
 
-/**
- *
- */
-function stringToBase64(str: string) {
+export const strToBase64 = (str: string) => {
   return btoa(
     new TextEncoder().encode(str).reduce((data, byte) => data + String.fromCharCode(byte), '')
   );
-}
-
-function base64ToString(base64: string) {
+};
+export const base64ToStr = (base64: string) => {
   return new TextDecoder().decode(Uint8Array.from(atob(base64), (c) => c.charCodeAt(0)));
-}
+};
