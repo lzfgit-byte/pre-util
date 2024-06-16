@@ -152,3 +152,16 @@ export class URLHelper {
     this.url.hash = hash;
   }
 }
+
+/**
+ *
+ */
+function stringToBase64(str: string) {
+  return btoa(
+    new TextEncoder().encode(str).reduce((data, byte) => data + String.fromCharCode(byte), '')
+  );
+}
+
+function base64ToString(base64: string) {
+  return new TextDecoder().decode(Uint8Array.from(atob(base64), (c) => c.charCodeAt(0)));
+}
